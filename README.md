@@ -23,7 +23,7 @@ User need to run **specific command (npm script) with custom texts (command line
 
 ## Run Application
 Follow bellow script on CLI to run this Application 
-1 ) Run `npm run cat-start -- {arg}`
+1) Run `npm run cat-start -- {arg}`
 
 **Sample script**
 
