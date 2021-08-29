@@ -17,7 +17,7 @@ const util = {
         return obj;
     },
     formatTime (time) {
-        return moment(time&&time).format('YYYY-MM-DD HH:mm:ss');
+        return moment(time&&time).format(constant.FORMAT.TIME);
     },
     getSearchParams(params) {
         return new URLSearchParams(params).toString();
@@ -26,19 +26,18 @@ const util = {
 
         return new Promise((resolve, reject) => {
             blend([
-                { buffer: Buffer.from(firstImage, 'binary'), x: 0, y: 0 },
-                { buffer: Buffer.from(secondImage, 'binary'), x: Number(width), y: 0 }
+                { buffer: Buffer.from(firstImage, constant.FORMAT.BINARY), x: 0, y: 0 },
+                { buffer: Buffer.from(secondImage, constant.FORMAT.BINARY), x: Number(width), y: 0 }
             ], {
                     width: Number(width) * 2,
                     height: Number(height),
                     format: 'jpeg',
                 }, (err, data) => {
-                    const fileOut = join(process.cwd(), `/cat-card.jpg`);
+                    const fileOut = join(process.cwd(), `/${constant.IMAGE_NAME}`); 
 
-                    writeFile(fileOut, data, 'binary', (error) => {
+                    writeFile(fileOut, data, constant.FORMAT.BINARY, (error) => {
                         error ? reject(error) : resolve({ imgUrl: fileOut });
                     })
-
                 });
         });
     },       

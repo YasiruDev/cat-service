@@ -5,7 +5,7 @@ exports.apiRequest = async (endUrl, method, params) => {
     var req = {
         uri: `${constant.BASE_URL}${endUrl}${params}`,
         method,
-        encoding: 'binary',
+        encoding: constant.FORMAT.BINARY,
     };
     return new Promise((resolve, reject) => {
         request(req, (error, response, body) => {            

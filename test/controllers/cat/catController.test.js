@@ -1,32 +1,31 @@
-const CatService = require("../../../src/services/cat/catService");
+
 const catController = require("../../../src/controllers/cat/catController");
 
-const httpMocks = require("node-mocks-http");
-
-beforeEach(() => {   
-    next = jest.fn();
+beforeEach(() => {    
     jest.resetAllMocks();
 });
 
 afterEach(() => {
     jest.resetAllMocks();
-  });
+});
 
 
-  const getWinnerSuccessResponse = {
-    'id' : 1,
-    'name' : 'winner',
-    'score' : 10,
-    'drawNumber' : '0001',
-    'status' : 1
-  }
+const getCatsSuccessResponse = {
+    'imgUrl': '/home/yasiru/Documents/Personal projects/Interviews/Gapstar/cat-service/cat-card.jpg',
+}
 
-describe("Test WinnerController", () => {
+describe("Test catController", () => {
 
-    it("Test getWinnerList for success", async () => {
-        jest.spyOn(CatService.prototype, "getCats").mockReturnValue(getWinnerSuccessResponse);
-        await catController.getCats();
-        expect(res.statusCode).toBe(200);
-    }); 
+    it("Test image save success", async () => {
 
+        jest.mock("../../../src/services/cat/catService", () => ({
+            ...(jest.requireActual("../../../src/services/cat/catService")),
+            getCats: jest.fn().mockReturnValue({
+                'imgUrl': '/home/yasiru/Documents/Personal projects/Interviews/Gapstar/cat-service/cat-card.jpg',
+            })
+        }))
+        const cats = await catController;
+        expect(cats).toEqual(getCatsSuccessResponse)
+    });
+   
 });

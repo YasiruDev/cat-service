@@ -1,7 +1,6 @@
 const express = require('express');
 
-
-module.exports=()=> {
+module.exports=async()=> {
         const app = express();
         app.all('/*', function (req, res, next) {
             res.header("Access-Control-Allow-Origin", "*");
@@ -13,7 +12,7 @@ module.exports=()=> {
                 next();
             }
         });        
-            
+        
         app.listen(process.env.APP_PORT, () => {
 
             console.log('App listening on port', process.env.APP_PORT)

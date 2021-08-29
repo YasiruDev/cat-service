@@ -1,4 +1,4 @@
-# Cataas
+# Cat Card Application
 
 ## About the project
 This API service is facilitate user to download randomly generated image with custom text.
@@ -28,3 +28,5 @@ Follow bellow script on CLI to run this Application
 **Sample script**
 
 > npm run cat-start -- --greeting=Hi --who=there --width=400 --height=500 --color=Pink --size=100
+
+[Document](https://docs.google.com/document/d/15H5dTEHOzX-uyse9k7AbPP6hqYCWBfmqG_-COgv8H5o/edit?usp=sharing) 
