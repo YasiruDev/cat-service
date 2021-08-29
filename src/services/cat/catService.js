@@ -1,5 +1,5 @@
 
-var argv = require('minimist')(process.argv.slice(2));
+const argv = require('minimist')(process.argv.slice(2));
 const request = require('../../config/request');
 const constant = require('../../config/constant');
 const utill = require("../../helper/util");
@@ -7,6 +7,7 @@ const _ = require('lodash');
 
 getCats = async () => {   
     try {
+        console.log("argv-->",argv)
         utill.changeObjKey(argv, Object.keys(constant.MAP_OBJ.SIZE_KEY)[0], Object.values(constant.MAP_OBJ.SIZE_KEY)[0])
 
         const firstCat = await getFirstCat(_.omit(argv, constant.PARAM_VALIDATION.UNDERSCORE, constant.PARAM_VALIDATION.WHO));
