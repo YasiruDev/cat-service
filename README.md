@@ -27,4 +27,4 @@ Follow bellow script on CLI to run this Application
 
 **Sample script**
 
-> npm run cat-start -- --greeting=Hi --who=you --width=400 --height=500 --color=Pink --size=100
+> npm run cat-start -- --greeting=Hi --who=there --width=400 --height=500 --color=Pink --size=100
