@@ -29,4 +29,4 @@ Follow bellow script on CLI to run this Application
 
 > npm run cat-start -- --greeting=Hi --who=there --width=400 --height=500 --color=Pink --size=100
 
-[Document](https://docs.google.com/document/d/15H5dTEHOzX-uyse9k7AbPP6hqYCWBfmqG_-COgv8H5o/edit?usp=sharing) 
+Read the document [Document](https://docs.google.com/document/d/15H5dTEHOzX-uyse9k7AbPP6hqYCWBfmqG_-COgv8H5o/edit?usp=sharing) for better understanding 
